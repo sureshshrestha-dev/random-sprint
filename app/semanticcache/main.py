@@ -423,10 +423,21 @@ if __name__ == "__main__":
 
 
 
-# donot use plain redis-server installed (neede RediSearch module).
- 
-#     docker run -d \
+# donot use plain redis-server installed (neede RediSearch module). Use Redis Stack instead (comes with RediSearch + Vector Search support out of the box).
+# docker stop redis-stack && docker rm redis-stack
+
+# docker run -d \
 #   --name redis-stack \
 #   -p 6379:6379 \
 #   -p 8001:8001 \
+#   -e REDIS_ARGS="--maxmemory 512mb --maxmemory-policy allkeys-lru" \
 #   redis/redis-stack:latest
+
+
+# docker exec redis-stack redis-cli CONFIG GET maxmemory-policy
+    # maxmemory-policy
+    # allkeys-lru
+
+# docker exec redis-stack redis-cli CONFIG GET maxmemory
+    # maxmemory
+    # 536870912
