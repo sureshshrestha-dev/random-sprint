@@ -1,5 +1,26 @@
 *env
 *venv
 
-pycache__/
+*.egg-info/
+*.egg
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+requires.txt
+top_level.txt
+
+venv/
+env/
+.venv/
+
+__pycache__/
 *.pyc
+*.pyo
+
+.vscode/
+.idea/
+
+
+
+# OS
+.DS_Store

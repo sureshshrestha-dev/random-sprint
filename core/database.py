@@ -46,6 +46,10 @@ class RedisClient:
             max_connections=max_connections
         )
         self.redis = redis.Redis(connection_pool=pool)
+    
+    @property
+    def client(self):
+        return self.redis  # exposes raw redis.Redis
 
     async def get(self, key: str):
         data = await self.redis.get(key)
@@ -58,10 +62,10 @@ class RedisClient:
         await self.redis.delete(key)
     
 
-def get_db():
+async def get_db():
     db=Database()   
     return db
 
-def get_redis():
+async def get_redis():
     redisclient = RedisClient()
     return redisclient
