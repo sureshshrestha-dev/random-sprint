@@ -1,3 +1,3 @@
 # random-sprint
 
-random test code
+random test code to learn and experminemt ideas
