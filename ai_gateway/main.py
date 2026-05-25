@@ -209,3 +209,18 @@ async def root():
 
 
     # uvicorn ai_gateway.main:app --host 127.0.0.1 --port 8000
+
+    # # Watch metrics in real-time
+# watch -n 2 'curl -s http://localhost:8000/admin/metrics | python3 -m json.tool'
+
+# Check DLQ sizes
+curl -s http://localhost:8000/admin/metrics | jq '.dlq_lengths'
+
+# Reset circuit breaker manually (if needed)
+# curl -X POST http://localhost:8000/admin/circuit-breaker/reset
+
+# View poison queue for debugging
+# curl -s http://localhost:8000/admin/dlq/poison | jq '.'
+
+# Clear poison queue (after fixing the issue)
+# curl -X DELETE http://localhost:8000/admin/dlq/poison
