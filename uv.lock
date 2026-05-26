@@ -1310,7 +1310,9 @@ dependencies = [
     { name = "openai" },
     { name = "openrouter" },
     { name = "pymongo" },
+    { name = "python-dotenv" },
     { name = "redis" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -1323,7 +1325,9 @@ requires-dist = [
     { name = "openai", specifier = ">=2.38.0" },
     { name = "openrouter", specifier = ">=0.9.1" },
     { name = "pymongo", specifier = ">=4.17.0" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "redis", extras = ["search"], specifier = ">=7.4.0" },
+    { name = "requests", specifier = ">=2.34.2" },
 ]
 
 [[package]]
