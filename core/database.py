@@ -4,7 +4,7 @@ import json
 from typing import Optional
 
 class Database:
-    def __init__(self, uri="mongodb://localhost:27017", db_name="eko_setup_db"):
+    def __init__(self, uri="mongodb://localhost:27017", db_name="lega_setup_db"):
         self.client = AsyncMongoClient(uri)
         self.db = self.client[db_name]
 
